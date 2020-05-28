@@ -8,6 +8,7 @@ import { TWWidgetDefinition, property, canBind, didBind, TWEvent, event, service
 @TWWidgetDefinition
 class DemoWebpackWidget extends TWRuntimeWidget {
 
+    private myElement: HTMLElement;
     /**
      * The `@event` decorator can be applied to class member to mark them as events.
      * They must have the `TWEvent` type and can be invoked to trigger the associated event.
@@ -76,10 +77,7 @@ class DemoWebpackWidget extends TWRuntimeWidget {
      */
     async afterRender(): Promise<void> {
         this.internalLogic = await import("./internalLogic/internalLogic");
-        this.jqElement[0].addEventListener('click', event => {
-            this.timesClicked++;
-            this.clicked();
-        });
+        this.myElement = this.jqElement[0];
     }
 
 

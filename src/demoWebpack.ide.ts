@@ -52,6 +52,8 @@ class DemoWebpackWidget extends TWComposerWidget {
      * @return      The HTML structure.
      */
     renderHtml(): string {
+        require('./styles/ide.css');
+
         return `<div class="widget-content widget-demo-viewer">${this.value}</div>`;
     };
 

@@ -65,6 +65,8 @@ class DemoWebpackWidget extends TWRuntimeWidget {
      * @return      The HTML structure.
      */
     renderHtml(): string {
+        require('./styles/runtime.css');
+
         return `<div class="widget-content widget-demo">${this.value}</div>`;
     };
 
